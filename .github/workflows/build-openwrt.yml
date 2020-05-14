@@ -71,7 +71,7 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name:Install SDNS
+    - name: SmartDNS
       run: |
         WORKINGDIR="`pwd`/feeds/packages/net/smartdns"
         mkdir $WORKINGDIR -p
