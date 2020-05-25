@@ -98,13 +98,14 @@ jobs:
       run: |
         cd openwrt/package
         git clone https://github.com/rufengsuixing/luci-app-adguardhome
-        git clone https://github.com/vernesong/OpenClash
-        mv OpenClash/luci-app-openclash/ .
-        rm -rf OpenClash/
-        cd base-files/files
-        mkdir -p etc/openclash/core && cd etc/openclash/core
-        curl -L https://github.com/vernesong/OpenClash/releases/download/Clash/clash-linux-mipsle-softfloat.tar.gz | tar zxf -
-        chmod +x clash
+        mkdir package/luci-app-openclash
+        cd package/luci-app-openclash
+        git init
+        git remote add -f origin https://github.com/vernesong/OpenClash.git
+        git config core.sparsecheckout true
+        echo "luci-app-openclash" >> .git/info/sparse-checkout
+        git pull origin master
+        git branch --set-upstream-to=origin/master master
 
     - name: Load custom configuration
       run: |
