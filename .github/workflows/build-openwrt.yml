@@ -74,7 +74,7 @@ jobs:
         
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
-  
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
@@ -85,6 +85,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
