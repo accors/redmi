@@ -13,4 +13,4 @@ sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_genera
 # Modify default name
 #sed -i 's/DISTRIB_REVISION='R*'/DISTRIB_REVISION='R*/by accors'/g' package/lean/default-settings/files/zzz-default-settings
 #Add openappfilter source
-git clone -b master https://github.com/destan19/OpenAppFilter package
+git clone -b master https://github.com/destan19/OpenAppFilter package/OpenAppFilter
