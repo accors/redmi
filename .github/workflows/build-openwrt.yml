@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build RM2100 OpenWrt
+name: Build R2100 OpenWrt
 
 on:
   repository_dispatch:
